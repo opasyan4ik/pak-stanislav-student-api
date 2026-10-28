@@ -2,11 +2,11 @@ package kz.pak.studentapi;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ControlledFailureTest {
     @Test
-    void demonstratesJenkinsStoppingOnTestFailure() {
-        fail("Controlled failure for the Jenkins midterm demonstration");
+    void demonstratesFixedTestAfterJenkinsFailure() {
+        assertEquals(2, 1 + 1);
     }
 }
