@@ -2,6 +2,8 @@
 
 Verified on Ubuntu WSL with Java 21, Gradle 9.8.2, Docker Desktop 29.8.2, and PostgreSQL 17.
 
+The personal Bash script currently has mode `744` (`-rwxr--r--`), and the log analysis file contains matches for the surname Pak.
+
 ## Build and API
 
 - `./gradlew clean build --no-daemon`: BUILD SUCCESSFUL; four tests passed.
@@ -43,3 +45,16 @@ docker compose exec app java -version
 ```
 
 The local `.env` contains the database password and is ignored by Git. It must stay private.
+
+## Jenkins CI/CD
+
+- Main job `Pak_Stanislav_Student_API`, build `#1`: **SUCCESS**. It checked out commit `cd1296f` from GitHub, compiled the project, ran the tests, built the Docker image, and verified that the image exists.
+- Separate demo job `Pak_Stanislav_Student_API_Failure_Demo`, build `#1`: **FAILURE** on commit `4d2f1a6`. `ControlledFailureTest` failed in the Test stage. Jenkins skipped Docker Build and Verify.
+- The test was corrected on the separate branch in commit `fef33ac` and pushed to GitHub. Polling detected this change without a manual start: build `#2` says `Started by an SCM change` and finished **SUCCESS**. The polling log shows the new remote revision and `Changes found`.
+- The demo branch is kept separate from `main`; the main branch never contained the intentionally failing test.
+
+Jenkins build history and console output:
+
+- `http://localhost:8080/job/Pak_Stanislav_Student_API/1/console`
+- `http://localhost:8080/job/Pak_Stanislav_Student_API_Failure_Demo/1/console`
+- `http://localhost:8080/job/Pak_Stanislav_Student_API_Failure_Demo/2/console`

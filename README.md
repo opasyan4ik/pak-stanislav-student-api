@@ -85,3 +85,5 @@ docker compose up -d         # existing student records remain
 Job name: `Pak_Stanislav_Student_API`. Configure it as a Pipeline from SCM using this GitHub repository's `main` branch and `Jenkinsfile`. The agent needs Java 21, the Gradle wrapper, Git, and access to a Docker daemon. The pipeline runs Checkout, Build, Test, Docker Build, and Verify; a failed command stops the pipeline. It polls GitHub for new commits every two minutes. Since the repository is public, checkout needs no GitHub credential; private repositories should use Jenkins Credentials.
 
 Jenkins is available at `http://localhost:8080` on the course machine. The application is at `http://localhost:8081` when started with Compose. Jenkins builds the image `pak-stanislav-student-api:v1.0-pak-stanislav`.
+
+The controlled failure and recovery are recorded in the separate `feature/pak-stanislav-ci-failure` branch and Jenkins job `Pak_Stanislav_Student_API_Failure_Demo`. See `evidence/verification.md` and `evidence/defense-notes.md` for the demonstration results and short explanations.
