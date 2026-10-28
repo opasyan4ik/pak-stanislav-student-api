@@ -1,6 +1,6 @@
 # Student API — Stanislav Pak
 
-DevOps midterm project. Java 21, Spring Boot 4.1.2, Gradle Wrapper 9.8.2, PostgreSQL.
+Stanislav Pak's DevOps project with full Spring Boot CRUD documentation.
 
 The project also contains the Linux monitoring script and logs from the first part of the course. Docker and Jenkins files are reserved for the next practical lessons.
 
