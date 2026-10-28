@@ -1,6 +1,6 @@
 # Student API — Stanislav Pak
 
-Stanislav Pak's DevOps project with Spring Boot REST API and PostgreSQL integration.
+Stanislav Pak's DevOps project with Spring Boot CRUD REST API, PostgreSQL integration and full documentation.
 
 The project also contains the Linux monitoring script and logs from the first part of the course. Docker and Jenkins files are reserved for the next practical lessons.
 
